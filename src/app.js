@@ -71,8 +71,6 @@ app.post("/repositories/:id/like", (request, response) => {
   const { id } = request.params;
   const repository = repositories.find(repository => repository.id === id);
 
-  console.log(repository);
-
   if (!repository) {
     return response.status(400).json({ error: 'Repository not found.' });
   }
